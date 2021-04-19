@@ -1,0 +1,25 @@
+{
+  "name": "node-red-buffer-worker",
+  "version": "1.0.0",
+  "description": "a Node-RED node to encode or decode a buffer from or to a PLC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jledun/node-red-buffer-worker.git"
+  },
+  "keywords": [
+    "Node-RED",
+    "buffer",
+    "encode",
+    "decode"
+  ],
+  "author": "Julien Ledun <j.ledun@iosystems.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jledun/node-red-buffer-worker/issues"
+  },
+  "homepage": "https://github.com/jledun/node-red-buffer-worker#readme"
+}
