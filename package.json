@@ -27,7 +27,7 @@
   },
   "node-red": {
     "nodes": {
-      "node-red-contrib-buffer-worker": "node-red-contrib-buffer-worker.js"
+      "node-red-contrib-buffer-worker": "node-red-contrib-buffer-worker/node-red-contrib-buffer-worker.js"
     }
   }
 }

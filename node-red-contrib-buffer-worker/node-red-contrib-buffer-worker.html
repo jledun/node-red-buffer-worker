@@ -1,15 +1,26 @@
 <script type="text/javascript">
   RED.nodes.registerType("encode-buffer", {
       category: 'IO Systems',
-      color: '#ff8000',
-      default: {
-          name: {value: ''}
+      color: '#ccd9ff',
+      defaults: {
+          name: {value: ''},
+          endianness: {value: 'BE'},
+          description: {
+            value: '{}',
+            required: true
+          }
       },
       inputs: 1,
       outputs: 1,
       icon: 'logo-iosystems.png',
       label: () => {
           return this.name || "encode-buffer";
+      },
+      oneditprepare: function() {
+          $("#node-input-description").typedInput({
+              type: "json",
+              types: ["json"]
+          })
       }
   });
 </script>
@@ -17,30 +28,57 @@
 <script type="text/javascript">
   RED.nodes.registerType("decode-buffer", {
       category: 'IO Systems',
-      color: '#ff8000',
-      default: {
-          name: {value: ''}
+      color: '#ccd9ff',
+      defaults: {
+          name: {value: ''},
+          endianness: {value: 'BE'},
+          description: {
+            value: '{}',
+            required: true
+          }
       },
       inputs: 1,
       outputs: 1,
       icon: 'logo-iosystems.png',
       label: () => {
           return this.name || "decode-buffer";
+      },
+      oneditprepare: function() {
+          $("#node-input-description").typedInput({
+              type: "json",
+              types: ["json"]
+          })
       }
   });
 </script>
 
 <script type="text/html" data-template-name="encode-buffer">
   <div class="form-row">
-    <label for="node-input-name"><i class="fa fa-tag"></i> Encode buffer</label>
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-endianness"><i class="fa fa-tag"></i> Endianness (BE/LE)</label>
+    <input type="text" id="node-input-endianness">
+  </div>
+  <div class="form-row">
+    <label for="node-input-description"><i class="fa fa-tag"></i> Description</label>
+    <input type="text" id="node-input-description">
   </div>
 </script>
 
 <script type="text/html" data-template-name="decode-buffer">
   <div class="form-row">
-    <label for="node-input-name"><i class="fa fa-tag"></i> Decode buffer</label>
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-endianness"><i class="fa fa-tag"></i> Endianness (BE/LE)</label>
+    <input type="text" id="node-input-endianness">
+  </div>
+  <div class="form-row">
+    <label for="node-input-description"><i class="fa fa-tag"></i> Description</label>
+    <input type="text" id="node-input-description">
   </div>
 </script>
 
