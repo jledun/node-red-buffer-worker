@@ -1,5 +1,5 @@
 {
-  "name": "node-red-buffer-worker",
+  "name": "node-red-contrib-buffer-worker",
   "version": "1.0.0",
   "description": "a Node-RED node to encode or decode a buffer from or to a PLC",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jledun/node-red-buffer-worker.git"
+    "url": "git+ssh://git@github.com/jledun/node-red-contrib-buffer-worker.git"
   },
   "keywords": [
     "Node-RED",
@@ -19,7 +19,15 @@
   "author": "Julien Ledun <j.ledun@iosystems.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jledun/node-red-buffer-worker/issues"
+    "url": "https://github.com/jledun/node-red-contrib-buffer-worker/issues"
   },
-  "homepage": "https://github.com/jledun/node-red-buffer-worker#readme"
+  "homepage": "https://github.com/jledun/node-red-contrib-buffer-worker#readme",
+  "dependencies": {
+    "io-buffer-worker": "github:jledun/io-buffer-worker"
+  },
+  "node-red": {
+    "nodes": {
+      "node-red-contrib-buffer-worker": "node-red-contrib-buffer-worker.js"
+    }
+  }
 }
