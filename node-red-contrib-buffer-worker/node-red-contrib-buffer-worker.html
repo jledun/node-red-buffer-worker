@@ -8,7 +8,9 @@
           description: {
             value: '{}',
             required: true
-          }
+          },
+          valueArray: {value: false},
+          arrayLE: {value: false}
       },
       inputs: 1,
       outputs: 1,
@@ -30,7 +32,7 @@
       category: 'IO Systems',
       color: '#ccd9ff',
       defaults: {
-          name: {value: ''},
+          inputField: {value: ''},
           endianness: {value: 'BE'},
           description: {
             value: '{}',
@@ -47,7 +49,12 @@
           $("#node-input-description").typedInput({
               type: "json",
               types: ["json"]
-          })
+          });
+          $("#node-input-inputField").typedInput({
+              type: "msg",
+              types: ["msg"],
+              typeField: "#node-input-inputFiled-type"
+          });
       }
   });
 </script>
@@ -65,12 +72,27 @@
     <label for="node-input-description"><i class="fa fa-tag"></i> Description</label>
     <input type="text" id="node-input-description">
   </div>
+  <div class="form-row">
+    <label for="node-input-valueArray"><i class="fa fa-tag"></i> Sortie</label>
+    <label for="node-input-valueArray" style="width: 70%;">
+      <input type="checkbox" id="node-input-valueArray" style="display:inline-block; width:22px; vertical-align:top;">
+      <span>Formatter la sortie pour un noeud Modbus Write</span>
+   </label>
+  </div>
+  <div class="form-row">
+    <label for="node-input-arrayLE"></label>
+    <label for="node-input-arrayLE" style="width: 70%;">
+      <input type="checkbox" id="node-input-arrayLE" style="display:inline-block; width:22px; vertical-align:top;">
+      <span>Inverser les octets</span>
+   </label>
+  </div>
 </script>
 
 <script type="text/html" data-template-name="decode-buffer">
   <div class="form-row">
-    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-    <input type="text" id="node-input-name" placeholder="Name">
+    <label for="node-input-inputField"><i class="fa fa-tag"></i> Source du buffer</label>
+    <input type="text" id="node-input-inputField" placeholder="payload">
+    <input type="hidden" id="node-input-inputField-type">
   </div>
   <div class="form-row">
     <label for="node-input-endianness"><i class="fa fa-tag"></i> Endianness (BE/LE)</label>
